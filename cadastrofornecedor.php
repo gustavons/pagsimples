@@ -5,7 +5,7 @@ include('dbconnect.php')
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
-<title>BCC</title>
+<title>Cadastrar fornecedor</title>
 <link rel='stylesheet' type='text/css' href='css/login.css'>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -16,7 +16,7 @@ include('dbconnect.php')
 <script src="js/validacaocadastro.js"></script>
 
 <script src="js/jquery.maskedinput.js"></script>
-<script src="js/mask_cadastro.js"></script>
+<script src="js/masc.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
 
@@ -26,7 +26,7 @@ include('dbconnect.php')
 
 
   <h3 class="page-header">Cadastrar fornecedor </h3>
-  <form  action="inserir.php" method="POST" >
+  <form  action="inserirfornecedor.php" method="POST" >
       	<div class="row">
       	  <div class="form-group col-md-4">
       	  	<label for="razao_social">Razão social</label>
@@ -124,7 +124,7 @@ include('dbconnect.php')
     	<div class="row">
     	  <div class="col-md-12">
     	  	<button type="submit" class="btn btn-primary">Salvar</button>
-    		<a href="template.html" class="btn btn-default">Cancelar</a>
+    		<a href="index.php" class="btn btn-default">Cancelar</a>
     	  </div>
     	</div>
 

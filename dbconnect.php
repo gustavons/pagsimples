@@ -23,4 +23,18 @@
         }
         return $fornecedores;
     }
+    
+    function remover_fornecedor($link, $id)
+
+    {
+        echo $id;
+        $sqlRemover = "DELETE FROM fornecedores WHERE id_fornecedor =" . $id;
+        mysqli_query($link, $sqlRemover);
+    }
+    
+    function buscar_fornecedor($link, $id) {
+        $sqlBusca = 'SELECT * FROM fornecedores WHERE id_fornecedor = ' . $id;
+        $resultado = mysqli_query($link, $sqlBusca);
+        return mysqli_fetch_assoc($resultado);
+    }
 ?>
