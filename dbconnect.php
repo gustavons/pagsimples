@@ -1,15 +1,26 @@
 <?php
-    $link = pg_connect("host=localhost port=5432 dbname=bcc2014 user=postgres password=postgres");
-//
-//    if (!$link) {
-//        echo 'Error: Unable to connect to MySQL.' . PHP_EOL;
-//        echo 'Debugging errno: ' . mysqli_connect_errno() . PHP_EOL;
-//        echo 'Debugging error: ' . mysqli_connect_error() . PHP_EOL;
-//        exit;
-//    }
-//
-//    echo 'Success: A proper connection to MySQL was made! The my_db database is great.' . PHP_EOL;
-//    echo 'Host information: ' . mysqli_get_host_info($link) . PHP_EOL;
-    
-//    mysqli_close($link);
+
+    $link = mysqli_connect("localhost", "sougusta", "", "projeto");
+     
+    if (!$link) {
+        echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        exit;
+    }
+     
+    // echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;
+     
+
+    function buscar_fornecedores($link) {
+        
+        $sqlBusca = 'SELECT * FROM fornecedores';
+        $resultado = mysqli_query($link, $sqlBusca);
+        $fornecedores = array();
+        
+        while ($fornecedor = mysqli_fetch_assoc($resultado)) {
+            $fornecedores[] = $fornecedor;
+        }
+        return $fornecedores;
+    }
 ?>

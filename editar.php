@@ -15,7 +15,7 @@ include('dbconnect.php')
 <script src="js/jquery.validate.js"></script>
 <script src="js/validacaocadastro.js"></script>
 
-<script src="js/jquery.maskedinput.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/mask_cadastro.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 

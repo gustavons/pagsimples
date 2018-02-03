@@ -2,25 +2,15 @@
 include('dbconnect.php');
 
 
-    $nome = $_POST['txtnome'];
-    $txtlogin = $_POST["txtlogin"];
-    $txtsenha = $_POST["txtsenha"];
-
-    $senha = $txtsenha;
-    $criptografada = md5($senha);
-
-//
-//if (mysqli_connect_errno())
-//{
-//
-//    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-//}
+echo $_POST['razao_social'];
+echo $_POST['razao_social'];
 
 
-$sql="INSERT INTO usuarios (nome_completo, login, senha) VALUES ('$nome','$txtlogin','$criptografada')";
+$sql="INSERT INTO  fornecedores (  razao_social ,  nome_fantasia ,  cnpj ,  inscricao_estadual ,  cep ,  nome_rua ,  numero ,  complemento ,  cidade ,  estado ,  telefone ,  email ,  site_empresa ,  ramo_empresa ) VALUES ('{$_POST['razao_social']}', '{$_POST['nome_fantasia']}', '{$_POST['cnpj']}', '{$_POST['inscricao_estadual']}', '{$_POST['cep']}', '{$_POST['nome_rua']}', '{$_POST['numero']}', '{$_POST['complemento']}', '{$_POST['cidade']}', '{$_POST['estado']}', '{$_POST['telefone']}', '{$_POST['email']}', '{$_POST['site_empresa']}', '{$_POST['ramo_empresa']}')";
 
 
-if (!pg_query($link,$sql))
+
+if (!mysqli_query($link,$sql))
 {
     die('Error');
 }
